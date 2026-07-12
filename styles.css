@@ -579,6 +579,30 @@ a{ color: inherit; text-decoration: none; }
   overflow: hidden;
   border: 1px solid var(--line);
 }
+.case-stats-text{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  padding: 1rem 0.9rem;
+  background: var(--cream-2);
+}
+.case-stats-text div{ text-align: center; }
+.case-stats-text b{
+  display: block;
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  color: var(--rust-dark);
+  font-weight: 700;
+  white-space: nowrap;
+}
+.case-stats-text span{
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+}
 .proof-note{
   text-align: center;
   color: var(--ink-soft);
@@ -845,6 +869,7 @@ a{ color: inherit; text-decoration: none; }
 
 /* ---------------- Pricing cards ---------------- */
 .pricing-grid{ grid-template-columns: repeat(3, 1fr); align-items: stretch; }
+.pricing-grid-4{ grid-template-columns: repeat(4, 1fr); }
 .price-card{
   background: var(--white);
   border: 1px solid var(--line);
@@ -992,13 +1017,14 @@ a{ color: inherit; text-decoration: none; }
 }
 
 @media (max-width: 980px){
-  .stat-grid, .pricing-grid, .testimonial-grid, .perf-grid, .perf-secondary, .checklist-grid{
+  .stat-grid, .pricing-grid, .pricing-grid-4, .testimonial-grid, .perf-grid, .perf-secondary, .checklist-grid{
     grid-template-columns: repeat(2, 1fr);
   }
   .price-card.featured{ transform: none; }
 }
 @media (max-width: 620px){
-  .stat-grid, .pricing-grid, .testimonial-grid, .perf-grid, .perf-secondary, .checklist-grid{
+  .stat-grid, .pricing-grid, .pricing-grid-4, .testimonial-grid, .perf-grid, .perf-secondary, .checklist-grid{
     grid-template-columns: 1fr;
   }
+  .case-stats-text{ grid-template-columns: 1fr; }
 }
